@@ -1,0 +1,45 @@
+{
+  "name": "sitio_web_personal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lehcimhdz/sitio_web_personal.git"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "data science",
+    "automation"
+  ],
+  "author": "Michel Cano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lehcimhdz/sitio_web_personal/issues"
+  },
+  "homepage": "https://github.com/lehcimhdz/sitio_web_personal#readme",
+  "description": "Sitio web personal de Michel Cano - Científico de Datos y Automatización",
+  "dependencies": {
+    "@types/node": "^24.0.4",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/three": "^0.177.0",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^12.19.1",
+    "lucide-react": "^0.523.0",
+    "next": "^13.4.19",
+    "postcss": "^8.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.0",
+    "three": "^0.177.0",
+    "typescript": "^5.8.3"
+  }
+}
