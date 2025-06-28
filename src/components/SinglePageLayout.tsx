@@ -140,8 +140,7 @@ const SinglePageLayout = () => {
             {/* Sección Sobre Mí */}
             <div ref={aboutRef} className="mb-16">
               <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  Hola, soy <span className="text-blue-400 font-semibold">Michel Cano</span>. 
+                <p> 
                   Soy un apasionado de la automatización y la inteligencia artificial. 
                   Cuento con más de tres años de experiencia en ciencia de datos, 
                   automatización, inteligencia artificial y desarrollo de soluciones 
