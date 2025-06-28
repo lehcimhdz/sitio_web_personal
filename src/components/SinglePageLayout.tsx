@@ -6,13 +6,13 @@ import { Mail, Github, Instagram, MapPin } from 'lucide-react';
 
 const SinglePageLayout = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black overflow-hidden">
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[calc(100vh-120px)]">
+    <div className="h-screen w-screen flex items-center justify-center bg-black">
+      <div className="container mx-auto px-4 h-full flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
           
           {/* Columna izquierda - Contacto y navegación */}
           <motion.div 
-            className="flex flex-col gap-8 overflow-auto pr-4"
+            className="flex flex-col gap-8 overflow-y-auto pr-4 h-full py-8 scrollbar-thin"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -112,7 +112,7 @@ const SinglePageLayout = () => {
           
           {/* Columna derecha - Sobre mí */}
           <motion.div 
-            className="flex flex-col overflow-auto pl-4"
+            className="flex flex-col overflow-y-auto pl-4 h-full py-8 scrollbar-thin"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
