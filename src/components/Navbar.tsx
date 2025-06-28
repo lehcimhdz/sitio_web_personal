@@ -24,48 +24,24 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-black/80 backdrop-blur-lg' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.a 
-          href="#home" 
-          className="text-2xl font-bold text-white"
+      <nav className="container mx-auto px-6 py-5 flex justify-between items-center">
+        <motion.div 
+          className="text-2xl font-bold text-blue-400"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          MCANO.DATA
-        </motion.a>
-
-        {/* Desktop Navigation */}
-        <motion.ul 
-          className="hidden md:flex items-center gap-8"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, staggerChildren: 0.1 }}
-        >
-          {['home', 'about', 'services', 'portfolio', 'skills', 'contact'].map((item) => (
-            <motion.li 
-              key={item}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <a 
-                href={`#${item}`} 
-                className="nav-link text-gray-300 hover:text-primary transition-colors duration-300"
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </a>
-            </motion.li>
-          ))}
-        </motion.ul>
+          Michel Cano
+        </motion.div>
 
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="text-white focus:outline-none"
+            className="text-gray-400 hover:text-blue-400 focus:outline-none"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -81,30 +57,30 @@ const Navbar = () => {
           exit={{ opacity: 0 }}
         >
           <motion.ul 
-            className="flex flex-col items-center gap-6 text-xl"
+            className="flex flex-col items-center gap-8 text-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            {['home', 'about', 'services', 'portfolio', 'skills', 'contact'].map((item) => (
-              <motion.li 
-                key={item}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a 
-                  href={`#${item}`} 
-                  className="text-white hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </a>
-              </motion.li>
-            ))}
+            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300" onClick={() => setIsOpen(false)}>
+                Services
+              </a>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300" onClick={() => setIsOpen(false)}>
+                Portfolio
+              </a>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300" onClick={() => setIsOpen(false)}>
+                Skills
+              </a>
+            </motion.li>
           </motion.ul>
           
           <button 
-            className="absolute top-5 right-5 text-white"
+            className="absolute top-5 right-5 text-gray-400 hover:text-blue-400"
             onClick={() => setIsOpen(false)}
           >
             <X size={24} />

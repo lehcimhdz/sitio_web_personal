@@ -21,7 +21,7 @@ const ParticlesBackground = () => {
     
     // Crear partículas
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 1500;
+    const particlesCount = 800; // Reducido el número de partículas
     
     const posArray = new Float32Array(particlesCount * 3);
     
@@ -33,10 +33,11 @@ const ParticlesBackground = () => {
     
     // Material de las partículas
     const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.005,
+      size: 0.003, // Reducido el tamaño
       color: 0x3b82f6,
       transparent: true,
       blending: THREE.AdditiveBlending,
+      opacity: 0.5, // Más transparente
     });
     
     // Crear el sistema de partículas
@@ -61,12 +62,12 @@ const ParticlesBackground = () => {
     const animate = () => {
       requestAnimationFrame(animate);
       
-      particlesMesh.rotation.x += 0.0005;
-      particlesMesh.rotation.y += 0.0005;
+      particlesMesh.rotation.x += 0.0002; // Movimiento más lento
+      particlesMesh.rotation.y += 0.0002; // Movimiento más lento
       
       // Movimiento suave siguiendo el mouse
-      particlesMesh.rotation.x += mouseY * 0.0005;
-      particlesMesh.rotation.y += mouseX * 0.0005;
+      particlesMesh.rotation.x += mouseY * 0.0002; // Menos sensible
+      particlesMesh.rotation.y += mouseX * 0.0002; // Menos sensible
       
       renderer.render(scene, camera);
     };
@@ -95,7 +96,7 @@ const ParticlesBackground = () => {
   return (
     <div 
       ref={containerRef} 
-      className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none opacity-60"
     />
   );
 };
