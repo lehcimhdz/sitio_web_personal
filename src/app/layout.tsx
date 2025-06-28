@@ -1,12 +1,18 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Roboto_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto-mono",
 });
 
 const inter = Inter({
@@ -34,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${poppins.variable} ${inter.variable} font-poppins antialiased bg-black text-white m-0 p-0`}>
+      <body className={`${spaceGrotesk.variable} ${robotoMono.variable} ${inter.variable} font-sans antialiased bg-black text-white m-0 p-0`}>
         {children}
       </body>
     </html>

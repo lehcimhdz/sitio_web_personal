@@ -29,21 +29,21 @@ const SinglePageLayout = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <h1 className="text-3xl font-bold text-white">
+              <h1 className="text-3xl font-bold text-white tracking-tight">
                 Michel Cano
               </h1>
             </div>
             
             {/* Contacto */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4 text-white">
+              <h2 className="text-2xl font-semibold mb-4 text-white tracking-tight">
                 Contacto
               </h2>
               
               <div className="flex flex-col gap-3">
                 <motion.a
                   href="mailto:bmichelcano@gmail.com"
-                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300 font-mono text-sm"
                   whileHover={{ x: 3 }}
                 >
                   <Mail size={18} className="text-blue-400" />
@@ -54,7 +54,7 @@ const SinglePageLayout = () => {
                   href="https://github.com/lehcimhdz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300 font-mono text-sm"
                   whileHover={{ x: 3 }}
                 >
                   <Github size={18} className="text-blue-400" />
@@ -65,7 +65,7 @@ const SinglePageLayout = () => {
                   href="https://instagram.com/chlehcim"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-300 font-mono text-sm"
                   whileHover={{ x: 3 }}
                 >
                   <Instagram size={18} className="text-blue-400" />
@@ -73,7 +73,7 @@ const SinglePageLayout = () => {
                 </motion.a>
                 
                 <motion.div
-                  className="flex items-center gap-2 text-gray-300"
+                  className="flex items-center gap-2 text-gray-300 font-mono text-sm"
                   whileHover={{ x: 3 }}
                 >
                   <MapPin size={18} className="text-blue-400" />
@@ -86,7 +86,7 @@ const SinglePageLayout = () => {
             <div>
               <motion.a 
                 href="#" 
-                className="block text-2xl font-bold text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
+                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
                 whileHover={{ x: 3 }}
               >
                 Services
@@ -94,7 +94,7 @@ const SinglePageLayout = () => {
               
               <motion.a 
                 href="#" 
-                className="block text-2xl font-bold text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
+                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
                 whileHover={{ x: 3 }}
               >
                 Portfolio
@@ -102,7 +102,7 @@ const SinglePageLayout = () => {
               
               <motion.a 
                 href="#" 
-                className="block text-2xl font-bold text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
+                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
                 whileHover={{ x: 3 }}
               >
                 Skills
@@ -117,7 +117,7 @@ const SinglePageLayout = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-white">
+            <h2 className="text-3xl font-semibold mb-6 text-white tracking-tight">
               Sobre Mí
             </h2>
             
@@ -132,7 +132,7 @@ const SinglePageLayout = () => {
 
               <p>
                 Además, poseo amplia experiencia y dominio de{' '}
-                <span className="text-blue-400 font-semibold">
+                <span className="font-mono text-blue-400 font-medium">
                   Python, Javascript, SQL, n8n
                 </span>, 
                 entre otras herramientas.
@@ -155,11 +155,11 @@ const SinglePageLayout = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 mt-auto pt-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400">3+</div>
+                <div className="text-2xl font-bold text-blue-400 font-mono">3+</div>
                 <div className="text-sm text-gray-400">Años de Experiencia</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400">50+</div>
+                <div className="text-2xl font-bold text-blue-400 font-mono">50+</div>
                 <div className="text-sm text-gray-400">Proyectos Completados</div>
               </div>
             </div>
