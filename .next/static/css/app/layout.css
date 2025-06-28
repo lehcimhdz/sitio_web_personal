@@ -967,6 +967,9 @@ video {
   margin-top: auto;
   margin-bottom: auto;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -1121,6 +1124,9 @@ video {
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.items-start {
+  align-items: flex-start;
 }
 .items-center {
   align-items: center;
