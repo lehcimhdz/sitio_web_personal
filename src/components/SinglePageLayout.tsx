@@ -10,9 +10,9 @@ const SinglePageLayout = () => {
       <div className="container mx-auto px-4 h-full flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
           
-          {/* Columna izquierda - Contacto y navegación */}
+          {/* Columna izquierda - Foto, navegación y contacto */}
           <motion.div 
-            className="flex flex-col gap-8 overflow-y-auto pr-4 h-full py-8 scrollbar-thin"
+            className="flex flex-col justify-between overflow-y-auto pr-4 h-full py-8 scrollbar-thin"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -34,8 +34,35 @@ const SinglePageLayout = () => {
               </h1>
             </div>
             
+            {/* Navegación simplificada */}
+            <div className="my-auto py-8">
+              <motion.a 
+                href="#" 
+                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
+                whileHover={{ x: 3 }}
+              >
+                Services
+              </motion.a>
+              
+              <motion.a 
+                href="#" 
+                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
+                whileHover={{ x: 3 }}
+              >
+                Portfolio
+              </motion.a>
+              
+              <motion.a 
+                href="#" 
+                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
+                whileHover={{ x: 3 }}
+              >
+                Skills
+              </motion.a>
+            </div>
+            
             {/* Contacto */}
-            <div className="mb-8">
+            <div>
               <h2 className="text-2xl font-semibold mb-4 text-white tracking-tight">
                 Contacto
               </h2>
@@ -81,33 +108,6 @@ const SinglePageLayout = () => {
                 </motion.div>
               </div>
             </div>
-            
-            {/* Navegación simplificada */}
-            <div>
-              <motion.a 
-                href="#" 
-                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
-                whileHover={{ x: 3 }}
-              >
-                Services
-              </motion.a>
-              
-              <motion.a 
-                href="#" 
-                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
-                whileHover={{ x: 3 }}
-              >
-                Portfolio
-              </motion.a>
-              
-              <motion.a 
-                href="#" 
-                className="block text-xl font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300 mb-3"
-                whileHover={{ x: 3 }}
-              >
-                Skills
-              </motion.a>
-            </div>
           </motion.div>
           
           {/* Columna derecha - Sobre mí */}
@@ -150,18 +150,6 @@ const SinglePageLayout = () => {
                 de trabajo, la necesidad de personal y han mejorado la calidad 
                 de los servicios en favor de la ciudadanía y los clientes.
               </p>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mt-auto pt-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 font-mono">3+</div>
-                <div className="text-sm text-gray-400">Años de Experiencia</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 font-mono">50+</div>
-                <div className="text-sm text-gray-400">Proyectos Completados</div>
-              </div>
             </div>
           </motion.div>
         </div>

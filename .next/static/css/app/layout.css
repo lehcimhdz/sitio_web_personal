@@ -963,6 +963,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -1010,6 +1014,9 @@ video {
 }
 .grid {
   display: grid;
+}
+.hidden {
+  display: none;
 }
 .h-1 {
   height: 0.25rem;
@@ -1556,23 +1563,51 @@ code, pre {
   font-family: var(--font-mono);
 }
 
-/* Estilos para scrollbar */
-.scrollbar-thin::-webkit-scrollbar {
+/* Cursor personalizado */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.4) 0%,
+    rgba(59, 130, 246, 0.2) 30%,
+    rgba(59, 130, 246, 0.1) 60%,
+    rgba(59, 130, 246, 0) 80%
+  );
+  mix-blend-mode: screen;
+  transition: width 0.2s ease-out, height 0.2s ease-out, opacity 0.2s ease-out;
+  filter: blur(8px);
+}
+
+/* Estilos para scrollbar - completamente invisible */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  background: transparent;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
-  border-radius: 10px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.7);
+  background: transparent;
 }
 
 /* Estilos personalizados para el sitio */
