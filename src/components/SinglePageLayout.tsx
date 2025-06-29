@@ -137,6 +137,11 @@ const SinglePageLayout = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            {/* Espacio para alinear con el nombre en la columna izquierda */}
+            <div className="mb-6">
+              {/* El texto "Hola, soy Michel Cano" ha sido eliminado */}
+            </div>
+            
             {/* Sección Sobre Mí */}
             <div ref={aboutRef} className="mb-16">
               <div className="space-y-4 text-gray-300 leading-relaxed">
