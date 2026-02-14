@@ -1,12 +1,16 @@
 
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
-import Experience from '@/components/Experience';
-import Skills from '@/components/Skills';
-import Portfolio from '@/components/Portfolio';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import DataFlowBackground from '@/components/DataFlowBackground';
+
+// Lazy load below-the-fold components
+const Experience = dynamic(() => import('@/components/Experience'), { ssr: true });
+const Skills = dynamic(() => import('@/components/Skills'), { ssr: true });
+const Portfolio = dynamic(() => import('@/components/Portfolio'), { ssr: true });
+const About = dynamic(() => import('@/components/About'), { ssr: true });
+const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
+const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
 
 export default function Home() {
   const jsonLd = {
@@ -28,19 +32,26 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-slate-900 min-h-screen">
+    <main className="min-h-screen relative selection:bg-cyan-500/20 selection:text-cyan-200">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Background - Lightweight CSS Animation */}
+      <DataFlowBackground />
+
       <Navbar />
-      <Hero />
-      <Experience />
-      <Skills />
-      <Portfolio />
-      <About />
-      <Contact />
-      <Footer />
+
+      <div className="relative z-10">
+        <Hero />
+        <Experience />
+        <Skills />
+        <Portfolio />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }
