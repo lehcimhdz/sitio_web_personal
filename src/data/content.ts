@@ -108,13 +108,13 @@ export const education = [
   },
   {
     school: "Facultad de Estudios Superiores Acatlán",
-    degree: "Licenciatura, Relaciones Internacionales",
+    degree: "Bachelor's Degree, International Relations",
     year: "2015 - 2019"
   }
 ];
 
 export const certifications = [
   "Python Data Associate",
-  "Diplomado en Ciencia de Datos",
-  "Diplomado Seguridad Ciudadana"
+  "Data Science Diploma",
+  "Data Scientist Associate"
 ];
