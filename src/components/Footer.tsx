@@ -5,7 +5,7 @@ import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -24,10 +24,10 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Michel Cano Hernández. Todos los derechos reservados.
+              &copy; {currentYear} Michel Cano Hernández. All rights reserved.
             </p>
           </motion.div>
-          
+
           <motion.div
             className="mt-4 md:mt-0 flex items-center gap-6"
             initial={{ opacity: 0, y: 20 }}
@@ -45,8 +45,8 @@ const Footer = () => {
             </motion.button>
           </motion.div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="mt-8 pt-6 border-t border-gray-800 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -54,7 +54,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p className="text-gray-500 text-xs">
-            Desarrollado con Next.js, React, Tailwind CSS y Framer Motion
+            Built with Next.js, React, Tailwind CSS, and Framer Motion
           </p>
         </motion.div>
       </div>

@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  /* Professional Dark Theme Palette */
+  --color-bg-primary: #0f172a; /* Slate 900 */
+  --color-bg-secondary: #1e293b; /* Slate 800 */
+  --color-text-primary: #f8fafc; /* Slate 50 */
+  --color-text-secondary: #94a3b8; /* Slate 400 */
+  --color-accent: #3b82f6; /* Blue 500 */
+  --color-accent-hover: #2563eb; /* Blue 600 */
+  
+  --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-roboto-mono), monospace;
-  --font-inter: var(--font-inter), sans-serif;
-  --background: #000000;
-  --foreground: #ffffff;
 }
 
 * {
@@ -16,187 +21,95 @@
   margin: 0;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-family: var(--font-sans);
-  background: var(--background);
-  color: var(--foreground);
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #000000;
-  color: #ffffff;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  line-height: 1.2;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+/* Utilities */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-code, pre {
-  font-family: var(--font-mono);
+.section-padding {
+  padding: 5rem 0;
 }
 
-/* Cursor personalizado */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cursor-light {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgba(59, 130, 246, 0.4) 0%,
-    rgba(59, 130, 246, 0.2) 30%,
-    rgba(59, 130, 246, 0.1) 60%,
-    rgba(59, 130, 246, 0) 80%
-  );
-  mix-blend-mode: screen;
-  transition: width 0.2s ease-out, height 0.2s ease-out, opacity 0.2s ease-out;
-  filter: blur(8px);
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
-/* Estilos para scrollbar - completamente invisible */
-.scrollbar-thin::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
-
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-
-/* Estilos personalizados para el sitio */
-.glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-}
-
-.glass-card:hover {
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-.neon-border {
-  position: relative;
-}
-
-.neon-border::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
-  border-radius: 18px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.neon-border:hover::before {
-  opacity: 1;
-}
-
-/* Animaciones de partículas */
-.particles-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Estilos para secciones */
-.section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-}
-
-/* Estilos para botones */
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
-.btn-secondary {
-  @apply bg-transparent border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white;
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
 }
 
-/* Estilos para cards */
-.card-hover {
-  @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
-}
-
-/* Estilos para navegación */
 .nav-link {
-  @apply relative text-gray-300 hover:text-white transition-colors duration-300;
+  color: var(--color-text-secondary);
+  font-weight: 500;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  transition: width 0.3s ease;
+.nav-link:hover {
+  color: var(--color-accent);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Estilos para skills */
-.skill-tag {
-  @apply bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-600/30 text-blue-300 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:border-blue-500;
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
 }
 
-/* Estilos para el hero */
-.hero-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
 }
 
-/* Estilos para el footer */
-.footer {
-  @apply bg-gray-900 text-gray-400 py-8 text-center;
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 } 

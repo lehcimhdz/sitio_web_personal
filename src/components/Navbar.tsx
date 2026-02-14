@@ -1,8 +1,10 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { personalInfo } from '@/data/content';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,85 +12,98 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    setIsOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navLinks = [
+    { name: 'Experience', id: 'experience' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Portfolio', id: 'portfolio' },
+    { name: 'About', id: 'about' },
+    { name: 'Contact', id: 'contact' },
+  ];
+
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-lg' : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled
+          ? 'bg-slate-900/90 backdrop-blur-md border-slate-800 py-4'
+          : 'bg-transparent border-transparent py-6'
+        }`}
     >
-      <nav className="container mx-auto px-6 py-5 flex justify-between items-center">
-        <motion.div 
-          className="text-2xl font-bold text-blue-400"
+      <nav className="container-custom flex justify-between items-center">
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          className="font-bold text-xl tracking-tight text-slate-100"
         >
-          Michel Cano
+          {personalInfo.name}
+          <span className="text-blue-500">.</span>
         </motion.div>
 
-        {/* Mobile Navigation Toggle */}
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex gap-8">
+          {navLinks.map((link, index) => (
+            <motion.button
+              key={link.id}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              onClick={() => scrollToSection(link.id)}
+              className="text-sm font-medium text-slate-400 hover:text-blue-500 transition-colors"
+            >
+              {link.name}
+            </motion.button>
+          ))}
+        </div>
+
+        {/* Mobile Toggle */}
         <div className="md:hidden">
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
-            className="text-gray-400 hover:text-blue-400 focus:outline-none"
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-slate-300 hover:text-white p-2"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <motion.div 
-          className="fixed inset-0 bg-black/95 z-40 flex items-center justify-center md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <motion.ul 
-            className="flex flex-col items-center gap-8 text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-slate-900 border-b border-slate-800 overflow-hidden"
           >
-            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300" onClick={() => setIsOpen(false)}>
-                Services
-              </a>
-            </motion.li>
-            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300" onClick={() => setIsOpen(false)}>
-                Portfolio
-              </a>
-            </motion.li>
-            <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-300" onClick={() => setIsOpen(false)}>
-                Skills
-              </a>
-            </motion.li>
-          </motion.ul>
-          
-          <button 
-            className="absolute top-5 right-5 text-gray-400 hover:text-blue-400"
-            onClick={() => setIsOpen(false)}
-          >
-            <X size={24} />
-          </button>
-        </motion.div>
-      )}
+            <div className="container-custom py-6 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-left text-lg font-medium text-slate-400 hover:text-blue-500 py-2"
+                >
+                  {link.name}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
 
-export default Navbar; 
+export default Navbar;
