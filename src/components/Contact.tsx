@@ -35,7 +35,7 @@ const Contact = () => {
               href={personalInfo.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-blue-500 transition-colors"
+              className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
             >
               <Linkedin size={20} />
               <span className="font-medium">Connect on LinkedIn</span>
@@ -45,7 +45,7 @@ const Contact = () => {
               href={personalInfo.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-white transition-colors"
+              className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
             >
               <Github size={20} />
               <span className="font-medium">Check my Code</span>

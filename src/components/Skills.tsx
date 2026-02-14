@@ -8,10 +8,10 @@ import { Database, Server, Code, Terminal, Brain } from 'lucide-react';
 const Skills = () => {
   const getIcon = (category: string) => {
     switch (category) {
-      case 'Backend & Systems': return <Server size={24} className="text-blue-500" />;
-      case 'Frontend': return <Layout size={24} className="text-purple-500" />;
-      case 'Data & Automation': return <Database size={24} className="text-emerald-500" />;
-      default: return <Code size={24} className="text-slate-500" />;
+      case 'Backend & Systems': return <Server size={24} className="text-slate-500 group-hover:text-cyan-400 transition-colors duration-300" />;
+      case 'Frontend': return <Layout size={24} className="text-slate-500 group-hover:text-purple-400 transition-colors duration-300" />;
+      case 'Data & Automation': return <Database size={24} className="text-slate-500 group-hover:text-emerald-400 transition-colors duration-300" />;
+      default: return <Code size={24} className="text-slate-500 group-hover:text-blue-400 transition-colors duration-300" />;
     }
   };
 
@@ -19,10 +19,7 @@ const Skills = () => {
     <section id="skills" className="section-padding bg-slate-900 border-y border-slate-800">
       <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          // ... (omitted lines)
           className="mb-12 text-center max-w-2xl mx-auto"
         >
           <h2 className="text-3xl font-bold mb-4">Technical Expertise</h2>
@@ -40,13 +37,13 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-700/50"
+              className="group card bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-700/50 hover:border-cyan-500/30"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-slate-900 rounded-lg border border-slate-700">
+                <div className="p-3 bg-slate-900 rounded-lg border border-slate-700 group-hover:border-slate-600 transition-colors">
                   {getIcon(skillGroup.category)}
                 </div>
-                <h3 className="text-xl font-bold text-slate-100">
+                <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">
                   {skillGroup.category}
                 </h3>
               </div>
