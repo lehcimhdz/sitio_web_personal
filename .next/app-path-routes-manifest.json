@@ -1,3 +1,5 @@
 {
-  "/page": "/"
+  "/page": "/",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/robots.txt/route": "/robots.txt"
 }
