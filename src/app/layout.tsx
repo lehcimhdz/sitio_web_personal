@@ -22,15 +22,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Michel Cano - Data Engineer",
-  description: "Data Engineer specializing in ETL pipelines, Python automation, and scalable backend architectures.",
-  keywords: "Data Engineer, Python, SQL, ETL, Automation, Backend, Michel Cano",
+  title: "Michel Cano - Python Developer & Backend Developer",
+  description: "Python Developer and Backend Developer with 4 years of experience building production systems. Specializes in Django, FastAPI, Airflow, AWS, and open-source tooling.",
+  keywords: "Python Developer, Backend Developer, Data Engineer, Django, FastAPI, Apache Airflow, AWS, Terraform, Michel Cano",
   authors: [{ name: "Michel Cano" }],
   openGraph: {
-    title: "Michel Cano - Data Engineer",
-    description: "Architecting scalable data platforms.",
+    title: "Michel Cano - Python Developer & Backend Developer",
+    description: "Building production systems that eliminate manual work and scale with real-world complexity.",
     type: "website",
     locale: "en_US",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Michel Cano - Python Developer & Backend Developer",
+    description: "Building production systems that eliminate manual work and scale with real-world complexity.",
+    images: ["/og-image.png"],
   },
 };
 

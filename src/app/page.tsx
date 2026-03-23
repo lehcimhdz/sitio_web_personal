@@ -17,10 +17,10 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Michel Cano',
-    jobTitle: 'Data Engineer',
+    jobTitle: 'Python Developer & Backend Developer',
     url: 'https://michel-cano.netlify.app',
     sameAs: [
-      'https://www.linkedin.com/in/michel-cano-hernández-5a0474225',
+      'https://www.linkedin.com/in/michel-cano-hernández',
       'https://github.com/lehcimhdz'
     ],
     address: {
@@ -28,7 +28,7 @@ export default function Home() {
       addressLocality: 'Mexico City',
       addressCountry: 'MX'
     },
-    knowsAbout: ['Data Engineering', 'Python', 'SQL', 'ETL', 'System Architecture']
+    knowsAbout: ['Python', 'Backend Development', 'Django', 'FastAPI', 'Apache Airflow', 'AWS', 'Terraform', 'ETL Pipelines', 'Data Engineering', 'SQL']
   };
 
   return (
