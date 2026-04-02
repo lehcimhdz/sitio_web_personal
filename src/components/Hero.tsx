@@ -14,10 +14,10 @@ interface StatConfig {
 }
 
 const STATS: StatConfig[] = [
-  { to: 5,   suffix: '',  label: 'años de experiencia',   delay: 0 },
-  { to: 500, suffix: '+', label: 'casos/año',             delay: 0.1 },
-  { to: 600, suffix: '+', label: 'tests automatizados',   delay: 0.2 },
-  { to: 95,  suffix: '%', label: 'reducción de tiempo',   delay: 0.3 },
+  { to: 5,   suffix: '',  label: 'years of experience', delay: 0 },
+  { to: 500, suffix: '+', label: 'cases/year',          delay: 0.1 },
+  { to: 600, suffix: '+', label: 'automated tests',     delay: 0.2 },
+  { to: 95,  suffix: '%', label: 'time reduction',      delay: 0.3 },
 ]
 
 const StatCard = ({ to, suffix = '', label, delay }: StatConfig) => {
