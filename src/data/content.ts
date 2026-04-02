@@ -8,7 +8,7 @@ export const personalInfo = {
   bio: "I build production systems that eliminate manual work and scale with real-world complexity.",
   summary: "Python Developer and Data Engineer with 5 years of experience building production systems for government institutions. Built a victim registry serving 500+ cases/year (Django, Celery, PostgreSQL, Docker) with 95% time reduction. Creator of 2 open-source libraries published on PyPI: legismex (67 modules) and open-data-mexico (async CKAN client with FastAPI server). Built production-grade data pipelines with Airflow, PySpark, dbt, and AWS provisioned with modularized Terraform. 600+ automated tests across projects.",
   social: {
-    linkedin: "https://www.linkedin.com/in/michel-cano-hern%C3%A1ndez-backend-python",
+    linkedin: "https://www.linkedin.com/in/michel-cano-hernandez-backend-python/",
     github: "https://github.com/lehcimhdz",
     email: "mailto:bmichelcano@gmail.com"
   }

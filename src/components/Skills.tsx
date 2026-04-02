@@ -5,10 +5,10 @@ import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
 const getIcon = (category: string) => {
   switch (category) {
-    case 'Backend Engineering': return <Server size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
-    case 'Frontend & Tools': return <Layout size={24} className="text-slate-500 group-hover:text-purple-400 transition-colors duration-300" />
-    case 'Data Engineering & Automation': return <Database size={24} className="text-slate-500 group-hover:text-emerald-400 transition-colors duration-300" />
-    default: return <Code size={24} className="text-slate-500 group-hover:text-blue-400 transition-colors duration-300" />
+    case 'Backend & Data Engineering': return <Database size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
+    case 'Cloud & Infrastructure': return <Server size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
+    case 'Frontend & Testing': return <Layout size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
+    default: return <Code size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
   }
 }
 

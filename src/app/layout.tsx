@@ -22,12 +22,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Michel Cano - Python Developer & Backend Developer",
-  description: "Python Developer and Backend Developer with 4 years of experience building production systems. Specializes in Django, FastAPI, Airflow, AWS, and open-source tooling.",
-  keywords: "Python Developer, Backend Developer, Data Engineer, Django, FastAPI, Apache Airflow, AWS, Terraform, Michel Cano",
+  title: "Michel Cano - Python Developer & Data Engineer",
+  description: "Python Developer and Data Engineer with 5 years of experience building production systems for government institutions. Specializes in Django, FastAPI, Airflow, PySpark, AWS, Terraform, and open-source tooling.",
+  keywords: "Python Developer, Data Engineer, Django, FastAPI, Apache Airflow, PySpark, dbt, AWS, Terraform, Michel Cano, legismex, open-data-mexico",
   authors: [{ name: "Michel Cano" }],
   openGraph: {
-    title: "Michel Cano - Python Developer & Backend Developer",
+    title: "Michel Cano - Python Developer & Data Engineer",
     description: "Building production systems that eliminate manual work and scale with real-world complexity.",
     type: "website",
     locale: "en_US",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michel Cano - Python Developer & Backend Developer",
+    title: "Michel Cano - Python Developer & Data Engineer",
     description: "Building production systems that eliminate manual work and scale with real-world complexity.",
     images: ["/og-image.png"],
   },
