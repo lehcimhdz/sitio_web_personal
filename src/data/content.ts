@@ -134,6 +134,7 @@ export const education = [
 
 export const certifications = [
   "Data Engineer Associate — DataCamp, 2026",
+  "Data Scientist Associate — DataCamp, 2025",
   "Python Data Associate — DataCamp, 2025",
   "Diploma in Data Science — Interactive Museum of Economics, 2022"
 ];

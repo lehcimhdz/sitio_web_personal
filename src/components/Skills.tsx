@@ -5,7 +5,7 @@ import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
 const getIcon = (category: string) => {
   switch (category) {
-    case 'Backend Engineering': return <Server size={24} className="text-slate-500 group-hover:text-cyan-400 transition-colors duration-300" />
+    case 'Backend Engineering': return <Server size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
     case 'Frontend & Tools': return <Layout size={24} className="text-slate-500 group-hover:text-purple-400 transition-colors duration-300" />
     case 'Data Engineering & Automation': return <Database size={24} className="text-slate-500 group-hover:text-emerald-400 transition-colors duration-300" />
     default: return <Code size={24} className="text-slate-500 group-hover:text-blue-400 transition-colors duration-300" />
@@ -29,13 +29,13 @@ const Skills = () => {
             <MotionDiv
               key={index}
               {...fadeUp(staggerDelay(index))}
-              className="group card bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-700/50 hover:border-cyan-500/30"
+              className="group card bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-700/50 hover:border-amber-500/30"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-slate-900 rounded-lg border border-slate-700 group-hover:border-slate-600 transition-colors">
                   {getIcon(skillGroup.category)}
                 </div>
-                <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-100 group-hover:text-amber-400 transition-colors">
                   {skillGroup.category}
                 </h3>
               </div>
