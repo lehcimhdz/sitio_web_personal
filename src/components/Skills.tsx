@@ -3,7 +3,7 @@ import { Database, Server, Code, Layout } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
 import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
-const getIcon = (category: string): JSX.Element => {
+const getIcon = (category: string) => {
   switch (category) {
     case 'Backend Engineering': return <Server size={24} className="text-slate-500 group-hover:text-cyan-400 transition-colors duration-300" />
     case 'Frontend & Tools': return <Layout size={24} className="text-slate-500 group-hover:text-purple-400 transition-colors duration-300" />
@@ -12,7 +12,7 @@ const getIcon = (category: string): JSX.Element => {
   }
 }
 
-const Skills = (): JSX.Element => {
+const Skills = () => {
   return (
     <section id="skills" className="section-padding bg-slate-900 border-y border-slate-800">
       <div className="container-custom">

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowUp } from 'lucide-react'
 
-const ScrollTopButton = (): JSX.Element => {
+const ScrollTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }

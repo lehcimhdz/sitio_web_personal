@@ -4,7 +4,7 @@ import { ArrowUpRight, FolderGit2 } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
 import { fadeUp, scaleIn, staggerDelay } from '@/lib/animationConfig'
 
-const Portfolio = (): JSX.Element => {
+const Portfolio = () => {
   return (
     <section id="portfolio" className="section-padding">
       <div className="container-custom">

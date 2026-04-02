@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { personalInfo } from '@/data/content';
 import { MapPin, Mail, Github, Linkedin, ArrowRight } from 'lucide-react';
 
-const Hero = (): JSX.Element => {
+const Hero = () => {
   const scrollToExperience = () => {
     const element = document.getElementById('experience');
     if (element) {

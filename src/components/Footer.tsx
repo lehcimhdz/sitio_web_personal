@@ -2,7 +2,7 @@ import MotionDiv from '@/components/ui/MotionDiv'
 import ScrollTopButton from '@/components/ui/ScrollTopButton'
 import { fadeUp, fadeIn } from '@/lib/animationConfig'
 
-const Footer = (): JSX.Element => {
+const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (

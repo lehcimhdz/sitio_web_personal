@@ -2,6 +2,6 @@
 
 import { motion, HTMLMotionProps } from 'framer-motion'
 
-const MotionDiv = (props: HTMLMotionProps<'div'>): JSX.Element => <motion.div {...props} />
+const MotionDiv = (props: HTMLMotionProps<'div'>) => <motion.div {...props} />
 
 export default MotionDiv

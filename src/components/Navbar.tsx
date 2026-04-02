@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { personalInfo } from '@/data/content';
 import useScrollPosition from '@/hooks/useScrollPosition';
 
-const Navbar = (): JSX.Element => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const scrolled = useScrollPosition(20);
 

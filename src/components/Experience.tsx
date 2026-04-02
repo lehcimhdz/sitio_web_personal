@@ -4,7 +4,7 @@ import { Calendar, Building2, Briefcase } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
 import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
-const Experience = (): JSX.Element => {
+const Experience = () => {
     return (
         <section id="experience" className="section-padding bg-slate-900/50">
             <div className="container-custom">

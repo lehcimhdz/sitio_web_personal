@@ -4,7 +4,7 @@ import { Mail, Linkedin, Github } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
 import { fadeUp } from '@/lib/animationConfig'
 
-const Contact = (): JSX.Element => {
+const Contact = () => {
   return (
     <section id="contact" className="section-padding border-t border-slate-800">
       <div className="container-custom max-w-4xl mx-auto text-center">

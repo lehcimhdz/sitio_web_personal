@@ -4,7 +4,7 @@ import { GraduationCap, Award, BookOpen } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
 import { fadeLeft, fadeRight } from '@/lib/animationConfig'
 
-const About = (): JSX.Element => {
+const About = () => {
   return (
     <section id="about" className="section-padding bg-slate-900/50">
       <div className="container-custom">
