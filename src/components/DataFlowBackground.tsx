@@ -1,7 +1,7 @@
 
 'use client';
 
-const DataFlowBackground = () => {
+const DataFlowBackground = (): JSX.Element => {
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-slate-950">
       {/* Grid Pattern */}

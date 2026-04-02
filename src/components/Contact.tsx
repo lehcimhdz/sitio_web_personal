@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { personalInfo } from '@/data/content';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
-const Contact = () => {
+const Contact = (): JSX.Element => {
   return (
     <section id="contact" className="section-padding border-t border-slate-800">
       <div className="container-custom max-w-4xl mx-auto text-center">

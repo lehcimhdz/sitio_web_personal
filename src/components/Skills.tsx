@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { skills } from '@/data/content';
 import { Database, Server, Code, Terminal, Brain, Layout } from 'lucide-react';
 
-const Skills = () => {
+const Skills = (): JSX.Element => {
   const getIcon = (category: string) => {
     switch (category) {
       case 'Backend Engineering': return <Server size={24} className="text-slate-500 group-hover:text-cyan-400 transition-colors duration-300" />;

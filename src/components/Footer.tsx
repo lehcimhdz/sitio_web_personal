@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {

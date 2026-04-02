@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { experience } from '@/data/content';
 import { Calendar, Building2, Briefcase } from 'lucide-react';
 
-const Experience = () => {
+const Experience = (): JSX.Element => {
     return (
         <section id="experience" className="section-padding bg-slate-900/50">
             <div className="container-custom">

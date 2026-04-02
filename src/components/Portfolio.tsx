@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { projects } from '@/data/content';
 import { ArrowUpRight, FolderGit2 } from 'lucide-react';
 
-const Portfolio = () => {
+const Portfolio = (): JSX.Element => {
   return (
     <section id="portfolio" className="section-padding">
       <div className="container-custom">

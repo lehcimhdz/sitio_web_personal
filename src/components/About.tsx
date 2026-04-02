@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { personalInfo, education, certifications } from '@/data/content';
 import { GraduationCap, Award, BookOpen } from 'lucide-react';
 
-const About = () => {
+const About = (): JSX.Element => {
   return (
     <section id="about" className="section-padding bg-slate-900/50">
       <div className="container-custom">
