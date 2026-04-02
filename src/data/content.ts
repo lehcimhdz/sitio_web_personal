@@ -2,13 +2,13 @@
 
 export const personalInfo = {
   name: "Michel Cano",
-  role: "Python Developer & Backend Developer",
+  role: "Python Developer & Data Engineer",
   email: "bmichelcano@gmail.com",
   location: "Mexico City, Mexico",
   bio: "I build production systems that eliminate manual work and scale with real-world complexity.",
-  summary: "Python Developer and Backend Developer with 4 years of experience building production systems for government institutions. Built a full victim registry system (Django, PostgreSQL, Celery, Docker) serving 500+ cases/year with 95% time reduction. Automated document generation, inter-agency coordination via Google APIs, and deployed an AI agent for natural language database querying. Creator of legismex, an open-source library (67 modules, PyPI) for legislative data extraction. Built end-to-end data pipelines with Airflow, AWS, Terraform, and medallion architecture.",
+  summary: "Python Developer and Data Engineer with 5 years of experience building production systems for government institutions. Built a victim registry serving 500+ cases/year (Django, Celery, PostgreSQL, Docker) with 95% time reduction. Creator of 2 open-source libraries published on PyPI: legismex (67 modules) and open-data-mexico (async CKAN client with FastAPI server). Built production-grade data pipelines with Airflow, PySpark, dbt, and AWS provisioned with modularized Terraform. 600+ automated tests across projects.",
   social: {
-    linkedin: "https://www.linkedin.com/in/michel-cano-hernández",
+    linkedin: "https://www.linkedin.com/in/michel-cano-hern%C3%A1ndez-backend-python",
     github: "https://github.com/lehcimhdz",
     email: "mailto:bmichelcano@gmail.com"
   }
@@ -17,15 +17,15 @@ export const personalInfo = {
 export const skills = [
   {
     category: "Backend & Data Engineering",
-    items: ["Python", "SQL (PostgreSQL)", "Django REST Framework", "FastAPI", "Celery", "Redis", "Apache Airflow", "pandas", "ETL Pipelines", "Medallion Architecture", "Pydantic", "Jinja2"]
+    items: ["Python", "Django REST Framework", "FastAPI", "SQLAlchemy", "Alembic", "Celery", "Redis", "Pydantic", "Apache Airflow", "PySpark", "dbt", "pandas", "Parquet", "boto3", "medallion architecture"]
   },
   {
     category: "Cloud & Infrastructure",
-    items: ["AWS (S3, RDS, EC2, Lambda)", "GCP (Compute Engine, Cloud Run)", "Terraform", "Docker & Docker Compose", "Nginx", "GitHub Actions CI/CD", "Linux / Ubuntu Server", "Cloudflare Tunnel"]
+    items: ["AWS (S3, RDS, EC2, ElastiCache, Secrets Manager, IAM, Glue, Athena, CloudWatch, MWAA)", "Terraform (modularized)", "Docker & Docker Compose", "PostgreSQL", "Nginx", "Cloudflare Tunnel", "GitHub Actions CI/CD", "Linux / Ubuntu Server"]
   },
   {
-    category: "Frontend & Tools",
-    items: ["React 19", "TypeScript", "JavaScript", "Tailwind CSS", "Supabase", "Vite", "Git", "pytest", "BeautifulSoup", "Playwright"]
+    category: "Frontend & Testing",
+    items: ["React 19", "TypeScript", "Tailwind CSS", "Supabase", "pytest (600+ tests)", "moto", "unittest.mock", "Sentry", "Prometheus", "pre-commit (ruff, black, mypy)", "BeautifulSoup", "Playwright"]
   }
 ];
 
@@ -36,12 +36,12 @@ export const experience = [
     period: "October 2024 – Present",
     description: "Designed and built the agency's core victim registry system from scratch, serving 500+ cases annually.",
     achievements: [
-      "Built Django REST API with PostgreSQL (field-level encryption), Celery + Redis for async processing, and a vanilla JS SPA (19 views, 5,400+ lines) deployed via Docker Compose (5 services) and Nginx.",
-      "Built document generation engine (895 lines) processing ODT templates via ZIP extraction, XML manipulation, Jinja2 rendering, and LibreOffice headless PDF conversion — reduced API response time from 30-45s to <200ms.",
-      "Integrated Google APIs (Drive, Sheets, Gmail) with OAuth2 for inter-agency document sharing and automated email notifications.",
-      "Deployed OpenClaw AI agent on Ubuntu Server connected to Telegram, enabling managers to query the victim registry in natural language.",
-      "Created interactive Chart.js dashboard for statistical analysis of victim demographics, crime types, and temporal trends.",
-      "Impact: Reduced case processing time by 95% (2 hours → 5 minutes), eliminated manual document generation entirely."
+      "Built victim registry system from scratch: Django REST API, PostgreSQL (field-level encryption), Celery + Redis (3 priority queues, exponential backoff), Docker Compose (5 services), Nginx, Cloudflare Tunnel. 500+ cases/year, 95% time reduction.",
+      "Built document generation engine (895 LOC): ODT → ZIP/XML → Jinja2 rendering → LibreOffice headless PDF — migrated to async Celery tasks, reducing API response from 30-45s to <200ms.",
+      "Deployed 9 Airflow DAGs for operational observability: CURP/RFC/email/phone normalization, integrity checks, Celery error audit, DB maintenance (ANALYZE + index optimization). Running on Ubuntu Server 24/7.",
+      "Deployed OpenClaw AI agent on Ubuntu Server + Telegram, enabling non-technical managers to query the victim registry in natural language.",
+      "Integrated Google APIs (Drive, Sheets, Gmail, Calendar) with OAuth2. Automated backups: pg_dump → gzip → Google Drive with 30-day rotation.",
+      "Created interactive Chart.js dashboard for statistical analysis of victim demographics, crime types, and temporal trends."
     ]
   },
   {
@@ -83,21 +83,27 @@ export const experience = [
 export const projects = [
   {
     title: "global-trade-aws",
-    description: "Production-grade pipeline extracting all UN Comtrade API endpoints to an S3 data lake. 8 Airflow DAGs, medallion architecture (Bronze→Silver→Gold), dbt models, 7-check data validation suite, Slack alerting, 433 tests, and full Terraform IaC (S3, IAM, VPC, Glue, Athena, MWAA).",
-    tags: ["Apache Airflow", "AWS", "Terraform", "dbt", "pandas", "Parquet", "CI/CD"],
+    description: "Production-grade pipeline extracting all UN Comtrade API endpoints to an S3 data lake. 8 Airflow DAGs with CeleryExecutor, medallion architecture (Bronze→Silver→Gold), dbt models, 7-check data quality validation suite, Slack alerting, 633 tests, and full Terraform IaC (S3, IAM, VPC, Glue, Athena, MWAA).",
+    tags: ["Apache Airflow", "AWS", "Terraform", "dbt", "PySpark", "Parquet", "CI/CD"],
     link: "https://github.com/lehcimhdz/global-trade-aws"
   },
   {
     title: "legismex",
-    description: "Open-source Python library providing programmatic access to Mexico's legislative data across 67 modules (Congress, Senate, DOF, 25+ state legislatures). 12,500+ LOC, 86 tests, daily automated health monitor via GitHub Actions. Published on PyPI.",
+    description: "Open-source Python library providing programmatic access to Mexico's legislative data across 67 modules (Congress, Senate, DOF, 25+ state legislatures). 12,500+ LOC, 86 test modules, daily automated health monitor via GitHub Actions. Published on PyPI. MIT license.",
     tags: ["Python", "httpx", "Pydantic", "Playwright", "BeautifulSoup", "PyPI", "CI/CD"],
     link: "https://github.com/lehcimhdz/legismex"
   },
   {
-    title: "pipeline-legismex-aws",
-    description: "End-to-end data pipeline using legismex as source, orchestrated with Apache Airflow on AWS. 5 extraction DAGs (20+ Mexican states with TaskGroups), 2 Silver transformation DAGs, 1 Gold unification DAG. Terraform provisioning RDS PostgreSQL.",
-    tags: ["Apache Airflow", "AWS", "Terraform", "pandas", "Parquet", "NDJSON"],
-    link: "https://github.com/lehcimhdz/pipeline-legismex-aws"
+    title: "open-data-mexico",
+    description: "Async Python client for datos.gob.mx (CKAN): 28 categories, 5,000+ datasets, 184 organizations. httpx async with connection pooling, Pydantic v2 models, in-memory TTL cache, retry with exponential backoff. Includes optional FastAPI REST server. 66 tests, 87% coverage. Published on PyPI.",
+    tags: ["Python", "httpx", "FastAPI", "Pydantic", "asyncio", "PyPI", "CKAN"],
+    link: "https://github.com/lehcimhdz/open-data-mexico-api"
+  },
+  {
+    title: "mex-open-data ecosystem",
+    description: "End-to-end data platform for Mexican government open data (5 repos). Airflow 2.9 pipeline (3 DAGs with smart skip — reduces runtime from 4h to 25min) → S3 Hive-partitioned data lake → FastAPI backend (SQLAlchemy, Alembic, API key auth, Celery, Prometheus) + PySpark analytics. Terraform modularized into 5 modules with native .tftest.hcl tests. 170+ tests across repos.",
+    tags: ["Apache Airflow", "AWS", "FastAPI", "PySpark", "Terraform", "SQLAlchemy", "dbt"],
+    link: "https://github.com/lehcimhdz/mex-open-data-pipeline"
   },
   {
     title: "DiplomaticU",
@@ -107,9 +113,9 @@ export const projects = [
   },
   {
     title: "Homo Politicus",
-    description: "Turn-based political & economic strategy simulator in C++. Player governs a country with Cobb-Douglas GDP model, dynamic labor markets, central bank autonomy, legislative processes, human rights index, and geopolitical events. 2,150 LOC with documented mathematical models.",
-    tags: ["C++", "Game Simulation", "Economics", "Mathematics"],
-    link: "#"
+    description: "Turn-based political & economic strategy simulator in C++17. Player governs a country with Cobb-Douglas GDP model, dynamic labor markets, central bank autonomy, legislative processes, human rights index, and geopolitical events. 185+ variables, documented mathematical models.",
+    tags: ["C++17", "Game Simulation", "Economics", "Mathematics"],
+    link: "https://github.com/lehcimhdz/homo-politicus"
   }
 ];
 
@@ -128,7 +134,6 @@ export const education = [
 
 export const certifications = [
   "Data Engineer Associate — DataCamp, 2026",
-  "Data Scientist Associate — DataCamp, 2025",
   "Python Data Associate — DataCamp, 2025",
   "Diploma in Data Science — Interactive Museum of Economics, 2022"
 ];
