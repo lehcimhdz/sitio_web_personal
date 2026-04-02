@@ -27,7 +27,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-blue-500 font-mono text-sm tracking-wider mb-4">
-              Hi, I'm {personalInfo.name}
+              {"Hi, I'm"} {personalInfo.name}
             </h2>
           </motion.div>
 

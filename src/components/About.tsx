@@ -22,7 +22,7 @@ const About = () => {
                 between business requirements and robust engineering solutions.
               </p>
               <p>
-                When I'm not coding, I'm likely studying Mathematics or exploring new system architectures.
+                {"When I'm not coding, I'm likely studying Mathematics or exploring new system architectures."}
               </p>
             </div>
           </MotionDiv>

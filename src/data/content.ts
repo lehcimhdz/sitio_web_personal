@@ -1,5 +1,4 @@
 
-import { LucideIcon, Code, Server, Database, Layout, Brain, Terminal, Shield, Award, Users } from 'lucide-react';
 
 export const personalInfo = {
   name: "Michel Cano",

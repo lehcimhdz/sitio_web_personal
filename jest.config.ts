@@ -16,6 +16,7 @@ const config: Config = {
         '^@/(.*)$': '<rootDir>/src/$1',
         'modularize-import-loader.*': '<rootDir>/__mocks__/lucideMock.js'
     },
+    testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
     collectCoverageFrom: [
         'src/components/**/*.tsx',
         'src/hooks/**/*.ts',
