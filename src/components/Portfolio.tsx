@@ -1,15 +1,13 @@
 
-'use client';
-
-import { motion } from 'framer-motion';
-import { projects } from '@/data/content';
-import { ArrowUpRight, FolderGit2 } from 'lucide-react';
+import { projects } from '@/data/content'
+import { ArrowUpRight, FolderGit2 } from 'lucide-react'
+import MotionDiv from '@/components/ui/MotionDiv'
 
 const Portfolio = (): JSX.Element => {
   return (
     <section id="portfolio" className="section-padding">
       <div className="container-custom">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -18,11 +16,11 @@ const Portfolio = (): JSX.Element => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <div className="w-20 h-1 bg-blue-600 rounded-full" />
-        </motion.div>
+        </MotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.div
+            <MotionDiv
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -57,12 +55,12 @@ const Portfolio = (): JSX.Element => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Portfolio

@@ -1,9 +1,7 @@
 
-'use client';
-
-import { motion } from 'framer-motion';
-import { personalInfo, education, certifications } from '@/data/content';
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
+import { personalInfo, education, certifications } from '@/data/content'
+import { GraduationCap, Award, BookOpen } from 'lucide-react'
+import MotionDiv from '@/components/ui/MotionDiv'
 
 const About = (): JSX.Element => {
   return (
@@ -11,7 +9,7 @@ const About = (): JSX.Element => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Bio Column */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -31,10 +29,10 @@ const About = (): JSX.Element => {
                 When I'm not coding, I'm likely studying Mathematics or exploring new system architectures.
               </p>
             </div>
-          </motion.div>
+          </MotionDiv>
 
           {/* Education & Certifications Column */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -76,11 +74,11 @@ const About = (): JSX.Element => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About

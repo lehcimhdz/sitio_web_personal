@@ -1,15 +1,13 @@
 
-'use client';
-
-import { motion } from 'framer-motion';
-import { personalInfo } from '@/data/content';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { personalInfo } from '@/data/content'
+import { Mail, Linkedin, Github } from 'lucide-react'
+import MotionDiv from '@/components/ui/MotionDiv'
 
 const Contact = (): JSX.Element => {
   return (
     <section id="contact" className="section-padding border-t border-slate-800">
       <div className="container-custom max-w-4xl mx-auto text-center">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -51,10 +49,10 @@ const Contact = (): JSX.Element => {
               <span className="font-medium">Check my Code</span>
             </a>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
