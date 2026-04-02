@@ -1,6 +1,7 @@
 import { skills } from '@/data/content'
 import { Database, Server, Code, Layout } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
+import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
 const getIcon = (category: string): JSX.Element => {
   switch (category) {
@@ -15,13 +16,7 @@ const Skills = (): JSX.Element => {
   return (
     <section id="skills" className="section-padding bg-slate-900 border-y border-slate-800">
       <div className="container-custom">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center max-w-2xl mx-auto"
-        >
+        <MotionDiv {...fadeUp()} className="mb-12 text-center max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Technical Expertise</h2>
           <p className="text-slate-400">
             A focused stack built for reliability and scale.
@@ -33,10 +28,7 @@ const Skills = (): JSX.Element => {
           {skills.map((skillGroup, index) => (
             <MotionDiv
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              {...fadeUp(staggerDelay(index))}
               className="group card bg-slate-800/50 hover:bg-slate-800 transition-all border border-slate-700/50 hover:border-cyan-500/30"
             >
               <div className="flex items-center gap-3 mb-6">

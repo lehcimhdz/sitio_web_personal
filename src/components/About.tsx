@@ -2,6 +2,7 @@
 import { personalInfo, education, certifications } from '@/data/content'
 import { GraduationCap, Award, BookOpen } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
+import { fadeLeft, fadeRight } from '@/lib/animationConfig'
 
 const About = (): JSX.Element => {
   return (
@@ -9,12 +10,7 @@ const About = (): JSX.Element => {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Bio Column */}
-          <MotionDiv
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <MotionDiv {...fadeLeft()}>
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <div className="prose prose-invert prose-lg text-slate-400">
               <p className="mb-4">
@@ -32,13 +28,7 @@ const About = (): JSX.Element => {
           </MotionDiv>
 
           {/* Education & Certifications Column */}
-          <MotionDiv
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+          <MotionDiv {...fadeRight(0.2)} className="space-y-8">
             {/* Education */}
             <div>
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-200">

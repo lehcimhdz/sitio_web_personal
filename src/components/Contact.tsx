@@ -2,17 +2,13 @@
 import { personalInfo } from '@/data/content'
 import { Mail, Linkedin, Github } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
+import { fadeUp } from '@/lib/animationConfig'
 
 const Contact = (): JSX.Element => {
   return (
     <section id="contact" className="section-padding border-t border-slate-800">
       <div className="container-custom max-w-4xl mx-auto text-center">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
+        <MotionDiv {...fadeUp()}>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-100">
             Ready to build something scalable?
           </h2>

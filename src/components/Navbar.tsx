@@ -1,23 +1,15 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { personalInfo } from '@/data/content';
+import useScrollPosition from '@/hooks/useScrollPosition';
 
 const Navbar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrolled = useScrollPosition(20);
 
   const scrollToSection = (id: string) => {
     setIsOpen(false);

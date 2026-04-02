@@ -2,18 +2,13 @@
 import { experience } from '@/data/content'
 import { Calendar, Building2, Briefcase } from 'lucide-react'
 import MotionDiv from '@/components/ui/MotionDiv'
+import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
 const Experience = (): JSX.Element => {
     return (
         <section id="experience" className="section-padding bg-slate-900/50">
             <div className="container-custom">
-                <MotionDiv
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="mb-12"
-                >
+                <MotionDiv {...fadeUp()} className="mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
                     <div className="w-20 h-1 bg-blue-600 rounded-full" />
                 </MotionDiv>
@@ -22,10 +17,7 @@ const Experience = (): JSX.Element => {
                     {experience.map((job, index) => (
                         <MotionDiv
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
+                            {...fadeUp(staggerDelay(index))}
                             className="relative"
                         >
                             {/* Grid Layout for Desktop */}
