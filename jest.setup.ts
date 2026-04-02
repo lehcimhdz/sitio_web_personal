@@ -6,7 +6,6 @@ import React from 'react'
 jest.mock('lucide-react', () => {
     return new Proxy({}, {
         get: (target, prop) => {
-            // Return a simple component for any icon import
             const Icon = (props: any) => React.createElement('svg', {
                 ...props,
                 'data-testid': `icon-${String(prop)}`
@@ -15,3 +14,17 @@ jest.mock('lucide-react', () => {
         }
     })
 })
+
+// Global framer-motion mock — strips animation props and renders plain HTML elements
+jest.mock('framer-motion', () => ({
+    motion: new Proxy({}, {
+        get: (_, tag) => {
+            const Component = ({ children, initial, animate, exit, transition, variants,
+                viewport, whileInView, whileHover, whileTap, ...rest }: any) =>
+                React.createElement(String(tag), rest, children)
+            Component.displayName = `motion.${String(tag)}`
+            return Component
+        }
+    }),
+    AnimatePresence: ({ children }: any) => children,
+}))

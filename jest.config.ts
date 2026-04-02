@@ -11,13 +11,24 @@ const createJestConfig = nextJest({
 const config: Config = {
     coverageProvider: 'v8',
     testEnvironment: 'jsdom',
-    // Add more setup options before each test is run
     setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     moduleNameMapper: {
-        // Handle module aliases
         '^@/(.*)$': '<rootDir>/src/$1',
-        // Handle modularize-import-loader (Next.js/Lucide issue)
         'modularize-import-loader.*': '<rootDir>/__mocks__/lucideMock.js'
+    },
+    collectCoverageFrom: [
+        'src/components/**/*.tsx',
+        'src/hooks/**/*.ts',
+        'src/lib/**/*.ts',
+        '!src/components/DataFlowBackground.tsx',
+    ],
+    coverageThreshold: {
+        global: {
+            lines: 60,
+            branches: 60,
+            functions: 60,
+            statements: 60,
+        },
     },
 }
 

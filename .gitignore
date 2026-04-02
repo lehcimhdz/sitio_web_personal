@@ -4,3 +4,7 @@ PROJECT.md
 .github
 .next
 .swc
+coverage
+dist
+.env
+.DS_Store
