@@ -64,10 +64,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Data Engineer.
+            Senior Backend Developer.
             <br />
             <span className="text-slate-400">
-              Architecting scalable data platforms.
+              Building production backend systems.
             </span>
           </motion.h1>
 

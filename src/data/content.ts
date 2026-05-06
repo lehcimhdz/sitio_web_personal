@@ -2,11 +2,11 @@
 
 export const personalInfo = {
   name: "Michel Cano",
-  role: "Python Developer & Data Engineer",
+  role: "Senior Backend Developer",
   email: "bmichelcano@gmail.com",
   location: "Mexico City, Mexico",
-  bio: "I build production systems that eliminate manual work and scale with real-world complexity.",
-  summary: "Python Developer and Data Engineer with 5 years of experience building production systems for government institutions. Built a victim registry serving 500+ cases/year (Django, Celery, PostgreSQL, Docker) with 95% time reduction. Creator of 2 open-source libraries published on PyPI: legismex (67 modules) and open-data-mexico (async CKAN client with FastAPI server). Built production-grade data pipelines with Airflow, PySpark, dbt, and AWS provisioned with modularized Terraform. 600+ automated tests across projects.",
+  bio: "I build production backend systems that eliminate manual work and scale with real-world complexity. Currently at XalDigital building solutions for the healthcare sector. My background in both technical implementation and institutional knowledge allows me to bridge the gap between business requirements and robust engineering solutions. When I'm not coding, I'm likely studying Mathematics or exploring new system architectures.",
+  summary: "Senior Backend Developer with 5 years of experience building production systems. Currently at XalDigital building backend solutions for the healthcare sector. Previously built a victim registry serving 500+ cases/year at CEAVI (Django, Celery, PostgreSQL, Docker) with 95% time reduction. Creator of 2 open-source libraries on PyPI. 600+ automated tests across projects.",
   social: {
     linkedin: "https://www.linkedin.com/in/michel-cano-hernandez-backend-python/",
     github: "https://github.com/lehcimhdz",
@@ -16,8 +16,12 @@ export const personalInfo = {
 
 export const skills = [
   {
-    category: "Backend & Data Engineering",
-    items: ["Python", "Django REST Framework", "FastAPI", "SQLAlchemy", "Alembic", "Celery", "Redis", "Pydantic", "Apache Airflow", "PySpark", "dbt", "pandas", "Parquet", "boto3", "medallion architecture"]
+    category: "Backend",
+    items: ["Python", "Django REST Framework", "FastAPI", "SQLAlchemy", "Alembic", "Celery", "Redis", "Pydantic", "PostgreSQL"]
+  },
+  {
+    category: "Data Engineering",
+    items: ["Apache Airflow", "PySpark", "dbt", "pandas", "Parquet", "boto3", "medallion architecture"]
   },
   {
     category: "Cloud & Infrastructure",
@@ -30,6 +34,15 @@ export const skills = [
 ];
 
 export const experience = [
+  {
+    company: "XalDigital",
+    role: "Senior Backend Developer",
+    period: "May 2026 – Present",
+    description: "Backend development for healthcare sector clients, building solutions to unify and integrate clinical and administrative systems.",
+    achievements: [
+      "Backend development for healthcare sector clients, building solutions to unify and integrate clinical and administrative systems. Python, Django, PostgreSQL, Docker."
+    ]
+  },
   {
     company: "Comisión Ejecutiva de Atención a Víctimas de la Ciudad de México (CEAVI)",
     role: "Python Developer & Data Engineer",
@@ -82,12 +95,6 @@ export const experience = [
 
 export const projects = [
   {
-    title: "global-trade-aws",
-    description: "Production-grade pipeline extracting all UN Comtrade API endpoints to an S3 data lake. 8 Airflow DAGs with CeleryExecutor, medallion architecture (Bronze→Silver→Gold), dbt models, 7-check data quality validation suite, Slack alerting, 633 tests, and full Terraform IaC (S3, IAM, VPC, Glue, Athena, MWAA).",
-    tags: ["Apache Airflow", "AWS", "Terraform", "dbt", "PySpark", "Parquet", "CI/CD"],
-    link: "https://github.com/lehcimhdz/global-trade-aws"
-  },
-  {
     title: "legismex",
     description: "Open-source Python library providing programmatic access to Mexico's legislative data across 67 modules (Congress, Senate, DOF, 25+ state legislatures). 12,500+ LOC, 86 test modules, daily automated health monitor via GitHub Actions. Published on PyPI. MIT license.",
     tags: ["Python", "httpx", "Pydantic", "Playwright", "BeautifulSoup", "PyPI", "CI/CD"],
@@ -110,6 +117,12 @@ export const projects = [
     description: "EdTech platform for Mexico's Foreign Service exam preparation. Full-stack app with React 19, TypeScript, Supabase (PostgreSQL), and Tailwind CSS. 14 pages, 19 components, 4 custom hooks, complete auth system, gamification engine, and 10-table database schema.",
     tags: ["React 19", "TypeScript", "Supabase", "Tailwind CSS", "Vite"],
     link: "https://diplomaticu.netlify.app/"
+  },
+  {
+    title: "global-trade-aws",
+    description: "Production-grade pipeline extracting all UN Comtrade API endpoints to an S3 data lake. 8 Airflow DAGs with CeleryExecutor, medallion architecture (Bronze→Silver→Gold), dbt models, 7-check data quality validation suite, Slack alerting, 633 tests, and full Terraform IaC (S3, IAM, VPC, Glue, Athena, MWAA).",
+    tags: ["Apache Airflow", "AWS", "Terraform", "dbt", "PySpark", "Parquet", "CI/CD"],
+    link: "https://github.com/lehcimhdz/global-trade-aws"
   },
   {
     title: "Homo Politicus",

@@ -5,7 +5,8 @@ import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
 const getIcon = (category: string) => {
   switch (category) {
-    case 'Backend & Data Engineering': return <Database size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
+    case 'Backend': return <Code size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
+    case 'Data Engineering': return <Database size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
     case 'Cloud & Infrastructure': return <Server size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
     case 'Frontend & Testing': return <Layout size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
     default: return <Code size={24} className="text-slate-500 group-hover:text-amber-400 transition-colors duration-300" />
@@ -24,7 +25,7 @@ const Skills = () => {
           </p>
         </MotionDiv>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skillGroup, index) => (
             <MotionDiv
               key={index}

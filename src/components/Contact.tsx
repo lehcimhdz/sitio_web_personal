@@ -13,7 +13,7 @@ const Contact = () => {
             Ready to build something scalable?
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-            {"I'm currently open to new opportunities as a Backend Developer or Full-Stack Engineer."}
+            {"Currently working as a Senior Backend Developer at XalDigital. Open to connecting and sharing ideas."}
           </p>
 
           <a

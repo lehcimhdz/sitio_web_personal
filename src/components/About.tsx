@@ -13,17 +13,7 @@ const About = () => {
           <MotionDiv {...fadeLeft()}>
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <div className="prose prose-invert prose-lg text-slate-400">
-              <p className="mb-4">
-                {personalInfo.bio}
-              </p>
-              <p className="mb-6">
-                Currently, I am focused on architecting scalable backend systems and automating complex workflows.
-                My background in both technical implementation and strategic analysis allows me to bridge the gap
-                between business requirements and robust engineering solutions.
-              </p>
-              <p>
-                {"When I'm not coding, I'm likely studying Mathematics or exploring new system architectures."}
-              </p>
+              <p>{personalInfo.bio}</p>
             </div>
           </MotionDiv>
 
