@@ -2,7 +2,9 @@
 # Data Engineer Portfolio 🚀
 
 ![CI/CD Pipeline](https://github.com/lehcimhdz/sitio_web_personal/actions/workflows/ci.yml/badge.svg)
-![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)
+<!-- Netlify deploy badge: replace <YOUR_NETLIFY_SITE_ID> with the UUID from
+     Netlify → Site settings → General → Site information → Site ID -->
+![Netlify Status](https://api.netlify.com/api/v1/badges/<YOUR_NETLIFY_SITE_ID>/deploy-status)
 
 A high-performance, SEO-optimized personal website designed to showcase Data Engineering skills, built with the Modern Data Stack aesthetic in mind.
 
