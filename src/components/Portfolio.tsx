@@ -1,22 +1,18 @@
-
 import { projects } from '@/data/content'
-import MotionDiv from '@/components/ui/MotionDiv'
-import { fadeUp } from '@/lib/animationConfig'
 import SpotlightCard from '@/components/ui/SpotlightCard'
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="section-padding">
+    <section id="portfolio" className="section-padding border-t border-neutral-900">
       <div className="container-custom">
-        <MotionDiv {...fadeUp()} className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-amber-300 rounded-full" />
-        </MotionDiv>
+        <h2 className="text-xs font-mono uppercase tracking-[0.18em] text-neutral-500 mb-10">
+          Projects
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
             <SpotlightCard
-              key={index}
+              key={project.title}
               title={project.title}
               description={project.description}
               tags={project.tags}
