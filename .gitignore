@@ -13,3 +13,4 @@ playwright-report
 blob-report
 tsconfig.tsbuildinfo
 playwright/.cache
+.spec
