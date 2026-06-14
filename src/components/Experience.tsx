@@ -1,107 +1,46 @@
-
 import { experience } from '@/data/content'
-import { Calendar, Building2, Briefcase } from 'lucide-react'
-import MotionDiv from '@/components/ui/MotionDiv'
-import { fadeUp, staggerDelay } from '@/lib/animationConfig'
 
 const Experience = () => {
-    return (
-        <section id="experience" className="section-padding bg-neutral-950/50">
-            <div className="container-custom">
-                <MotionDiv {...fadeUp()} className="mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
-                    <div className="w-20 h-1 bg-amber-300 rounded-full" />
-                </MotionDiv>
+  return (
+    <section id="experience" className="section-padding border-t border-neutral-900">
+      <div className="container-custom">
+        <h2 className="text-xs font-mono uppercase tracking-[0.18em] text-neutral-500 mb-10">
+          Work
+        </h2>
 
-                <div className="space-y-12">
-                    {experience.map((job, index) => (
-                        <MotionDiv
-                            key={index}
-                            {...fadeUp(staggerDelay(index))}
-                            className="relative"
-                        >
-                            {/* Grid Layout for Desktop */}
-                            <div className="hidden md:grid md:grid-cols-[320px_auto_1fr] gap-8 items-start">
+        <div className="space-y-12 max-w-3xl">
+          {experience.map((job) => (
+            <div key={`${job.company}-${job.period}`} className="grid grid-cols-1 md:grid-cols-[10rem_1fr] gap-x-8 gap-y-3">
+              <p className="text-xs font-mono text-neutral-500 pt-1">
+                {job.period}
+              </p>
 
-                                {/* 1. Period & Company (Left Side) */}
-                                <div className="text-right pt-2">
-                                    <div className="text-neutral-400 font-mono text-sm mb-2 flex items-center justify-end gap-2">
-                                        {job.period}
-                                        <Calendar size={14} />
-                                    </div>
-                                    <h3 className="text-lg font-semibold text-neutral-200 flex items-center justify-end gap-2">
-                                        {job.company}
-                                        <Building2 size={16} className="text-amber-300 shrink-0" />
-                                    </h3>
-                                </div>
+              <div>
+                <h3 className="text-base font-medium text-neutral-100">
+                  {job.role}
+                </h3>
+                <p className="text-sm text-neutral-500 mb-4">
+                  {job.company}
+                </p>
 
-                                {/* 2. Timeline Line & Dot (Center) */}
-                                <div className="relative flex justify-center h-full min-h-[150px]">
-                                    <div className="absolute top-0 bottom-[-48px] w-px bg-neutral-900" />
-                                    <div className="w-4 h-4 bg-amber-300 rounded-full border-4 border-neutral-950 z-10 mt-2.5 relative" />
-                                </div>
+                <p className="text-sm text-neutral-400 mb-4 leading-relaxed">
+                  {job.description}
+                </p>
 
-                                {/* 3. Content Card (Right Side) */}
-                                <div className="card hover:border-neutral-800/50 transition-colors">
-                                    <div className="flex items-center gap-2 mb-4">
-                                        <Briefcase size={18} className="text-amber-300" />
-                                        <h4 className="text-xl font-bold text-neutral-100">{job.role}</h4>
-                                    </div>
-
-                                    <p className="text-neutral-400 mb-6 italic">
-                                        {job.description}
-                                    </p>
-
-                                    <ul className="space-y-3">
-                                        {job.achievements.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-neutral-300 text-sm">
-                                                <span className="mt-1.5 w-1.5 h-1.5 bg-amber-300 rounded-full shrink-0" />
-                                                <span className="leading-relaxed">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            {/* Mobile Layout (Stacked) */}
-                            <div className="md:hidden relative pl-8 border-l border-neutral-900 ml-3">
-                                <div className="absolute -left-[5px] top-0 w-3 h-3 bg-amber-300 rounded-full ring-4 ring-neutral-950" />
-
-                                <div className="mb-6">
-                                    <div className="text-neutral-400 font-mono text-xs mb-1 flex items-center gap-2">
-                                        <Calendar size={12} />
-                                        {job.period}
-                                    </div>
-                                    <h3 className="text-base font-semibold text-neutral-200 mb-2">
-                                        {job.company}
-                                    </h3>
-
-                                    <div className="card mt-4">
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <Briefcase size={16} className="text-amber-300" />
-                                            <h4 className="text-lg font-bold text-neutral-100">{job.role}</h4>
-                                        </div>
-                                        <p className="text-neutral-400 text-sm mb-4 italic">
-                                            {job.description}
-                                        </p>
-                                        <ul className="space-y-3">
-                                            {job.achievements.map((item, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-neutral-300 text-xs">
-                                                    <span className="mt-1.5 w-1.5 h-1.5 bg-amber-300 rounded-full shrink-0" />
-                                                    <span className="leading-relaxed">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </MotionDiv>
-                    ))}
-                </div>
+                <ul className="space-y-2">
+                  {job.achievements.map((item, i) => (
+                    <li key={i} className="text-sm text-neutral-400 leading-relaxed">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Experience
