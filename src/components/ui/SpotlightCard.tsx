@@ -1,9 +1,4 @@
-'use client'
-
-import { useRef, useState, useCallback } from 'react'
-import { motion } from 'framer-motion'
-import { ArrowUpRight, FolderGit2 } from 'lucide-react'
-import { scaleIn, staggerDelay } from '@/lib/animationConfig'
+import { ArrowUpRight } from 'lucide-react'
 
 interface SpotlightCardProps {
   title: string
@@ -13,76 +8,32 @@ interface SpotlightCardProps {
   index: number
 }
 
-const SpotlightCard = ({ title, description, tags, link, index }: SpotlightCardProps) => {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const [spotlight, setSpotlight] = useState({ x: 50, y: 50, opacity: 0 })
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current
-    if (!card) return
-    const rect = card.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * 100
-    const y = ((e.clientY - rect.top) / rect.height) * 100
-    setSpotlight({ x, y, opacity: 1 })
-  }, [])
-
-  const handleMouseLeave = useCallback(() => {
-    setSpotlight((prev) => ({ ...prev, opacity: 0 }))
-  }, [])
-
+const SpotlightCard = ({ title, description, tags, link }: SpotlightCardProps) => {
   return (
-    <motion.div
-      ref={cardRef}
-      {...scaleIn(staggerDelay(index))}
-      className="group card relative flex flex-col h-full bg-neutral-950/50 hover:bg-neutral-900 border-neutral-900 hover:border-amber-500/40 overflow-hidden cursor-default"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col h-full p-6 border border-neutral-800 rounded-md hover:border-neutral-700 transition-colors"
     >
-      {/* Spotlight overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[0.75rem] transition-opacity duration-300"
-        style={{
-          opacity: spotlight.opacity,
-          background: `radial-gradient(
-            350px circle at ${spotlight.x}% ${spotlight.y}%,
-            rgba(59, 130, 246, 0.12),
-            transparent 70%
-          )`,
-        }}
-      />
-
-      <div className="flex justify-between items-start mb-6 relative z-10">
-        <div className="p-3 bg-amber-300/10 rounded-lg text-amber-300 group-hover:bg-amber-300 group-hover:text-white transition-colors">
-          <FolderGit2 size={24} />
-        </div>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-neutral-500 hover:text-amber-400 transition-colors"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <ArrowUpRight size={24} />
-        </a>
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <h3 className="text-base font-medium text-neutral-100 group-hover:text-amber-300 transition-colors">
+          {title}
+        </h3>
+        <ArrowUpRight
+          size={18}
+          className="shrink-0 text-neutral-600 group-hover:text-amber-300 transition-colors"
+        />
       </div>
 
-      <h3 className="text-xl font-bold text-neutral-100 mb-3 group-hover:text-amber-300 transition-colors relative z-10">
-        {title}
-      </h3>
-
-      <p className="text-neutral-400 text-sm mb-6 flex-grow leading-relaxed relative z-10">
+      <p className="text-sm text-neutral-400 leading-relaxed mb-6 flex-grow">
         {description}
       </p>
 
-      <div className="flex flex-wrap gap-2 mt-auto relative z-10">
-        {tags.map((tag, tagIndex) => (
-          <span key={tagIndex} className="text-xs font-mono text-amber-300/80">
-            #{tag}
-          </span>
-        ))}
-      </div>
-    </motion.div>
+      <p className="text-xs font-mono text-neutral-500 mt-auto leading-relaxed">
+        {tags.join(' · ')}
+      </p>
+    </a>
   )
 }
 
