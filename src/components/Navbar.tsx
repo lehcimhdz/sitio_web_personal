@@ -1,8 +1,7 @@
-
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { personalInfo } from '@/data/content';
 import useScrollPosition from '@/hooks/useScrollPosition';
@@ -20,72 +19,69 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Experience', id: 'experience' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Portfolio', id: 'portfolio' },
+    { name: 'Work', id: 'experience' },
+    { name: 'Stack', id: 'skills' },
+    { name: 'Projects', id: 'portfolio' },
     { name: 'About', id: 'about' },
     { name: 'Contact', id: 'contact' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled
-          ? 'bg-neutral-950/90 backdrop-blur-md border-neutral-900 py-4'
-          : 'bg-transparent border-transparent py-6'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? 'bg-neutral-950/85 backdrop-blur-md border-b border-neutral-900'
+          : 'bg-transparent border-b border-transparent'
+      }`}
     >
-      <nav className="container-custom flex justify-between items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="font-bold text-xl tracking-tight text-neutral-100"
+      <nav className="container-custom flex justify-between items-center py-4">
+        <a
+          href="#home"
+          className="font-mono text-sm text-neutral-300 hover:text-neutral-100 transition-colors"
         >
           {personalInfo.name}
-          <span className="text-amber-300">.</span>
-        </motion.div>
+        </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8">
-          {navLinks.map((link, index) => (
-            <motion.button
+        <div className="hidden md:flex gap-6">
+          {navLinks.map((link) => (
+            <button
               key={link.id}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               onClick={() => scrollToSection(link.id)}
-              className="text-sm font-medium text-neutral-400 hover:text-amber-300 transition-colors"
+              className="text-xs font-mono uppercase tracking-wider text-neutral-500 hover:text-amber-300 transition-colors"
             >
               {link.name}
-            </motion.button>
+            </button>
           ))}
         </div>
 
-        {/* Mobile Toggle */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-neutral-300 hover:text-white p-2"
+            className="text-neutral-400 hover:text-neutral-100 p-2"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-neutral-950 border-b border-neutral-900 overflow-hidden"
           >
-            <div className="container-custom py-6 flex flex-col gap-4">
+            <div className="container-custom py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-left text-lg font-medium text-neutral-400 hover:text-amber-300 py-2"
+                  className="text-left text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-amber-300 py-2"
                 >
                   {link.name}
                 </button>
