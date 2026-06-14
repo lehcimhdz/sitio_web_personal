@@ -1,14 +1,8 @@
 
 import React from "react";
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono, Space_Grotesk } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
-});
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -48,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${spaceGrotesk.variable} ${robotoMono.variable} ${inter.variable} font-sans antialiased bg-black text-white m-0 p-0`}>
+      <body className={`${robotoMono.variable} ${inter.variable} font-sans antialiased bg-neutral-950 text-neutral-100 m-0 p-0`}>
         {children}
       </body>
     </html>
