@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen relative selection:bg-cyan-500/20 selection:text-cyan-200">
+    <main className="min-h-screen relative selection:bg-amber-300/30 selection:text-amber-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

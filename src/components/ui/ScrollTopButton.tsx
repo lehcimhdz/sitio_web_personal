@@ -11,8 +11,8 @@ const ScrollTopButton = () => {
   return (
     <motion.button
       onClick={scrollToTop}
-      className="p-3 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-600/30 text-blue-400 hover:text-white transition-colors duration-300"
-      whileHover={{ y: -3, boxShadow: '0 5px 15px rgba(59, 130, 246, 0.3)' }}
+      className="p-3 rounded-full border border-neutral-800 text-neutral-400 hover:text-amber-300 hover:border-neutral-700 transition-colors duration-300"
+      whileHover={{ y: -2 }}
       whileTap={{ scale: 0.95 }}
     >
       <ArrowUp size={20} />

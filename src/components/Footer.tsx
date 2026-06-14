@@ -6,11 +6,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-black py-8 border-t border-gray-800">
+    <footer className="bg-black py-8 border-t border-neutral-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <MotionDiv {...fadeUp()}>
-            <p className="text-gray-400 text-sm">
+            <p className="text-neutral-400 text-sm">
               &copy; {currentYear} Michel Cano Hernández. All rights reserved.
             </p>
           </MotionDiv>
@@ -20,8 +20,8 @@ const Footer = () => {
           </MotionDiv>
         </div>
 
-        <MotionDiv {...fadeIn(0.4)} className="mt-8 pt-6 border-t border-gray-800 text-center">
-          <p className="text-gray-500 text-xs">
+        <MotionDiv {...fadeIn(0.4)} className="mt-8 pt-6 border-t border-neutral-900 text-center">
+          <p className="text-neutral-500 text-xs">
             Built with Next.js, React, Tailwind CSS, and Framer Motion
           </p>
         </MotionDiv>

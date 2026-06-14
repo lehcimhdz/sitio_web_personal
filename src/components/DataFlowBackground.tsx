@@ -3,7 +3,7 @@
 
 const DataFlowBackground = () => {
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-slate-950">
+    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-neutral-950">
       {/* Grid Pattern */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -14,7 +14,7 @@ const DataFlowBackground = () => {
       />
 
       {/* Radial Gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-transparent to-slate-900/80" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-neutral-950 via-transparent to-neutral-950/80" />
 
       {/* Animated Data Streams (Straight Pipelines) */}
       <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">

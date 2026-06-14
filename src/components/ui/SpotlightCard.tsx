@@ -34,7 +34,7 @@ const SpotlightCard = ({ title, description, tags, link, index }: SpotlightCardP
     <motion.div
       ref={cardRef}
       {...scaleIn(staggerDelay(index))}
-      className="group card relative flex flex-col h-full bg-slate-900/50 hover:bg-slate-800 border-slate-800 hover:border-amber-500/40 overflow-hidden cursor-default"
+      className="group card relative flex flex-col h-full bg-neutral-950/50 hover:bg-neutral-900 border-neutral-900 hover:border-amber-500/40 overflow-hidden cursor-default"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -53,31 +53,31 @@ const SpotlightCard = ({ title, description, tags, link, index }: SpotlightCardP
       />
 
       <div className="flex justify-between items-start mb-6 relative z-10">
-        <div className="p-3 bg-blue-500/10 rounded-lg text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+        <div className="p-3 bg-amber-300/10 rounded-lg text-amber-300 group-hover:bg-amber-300 group-hover:text-white transition-colors">
           <FolderGit2 size={24} />
         </div>
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate-500 hover:text-amber-400 transition-colors"
+          className="text-neutral-500 hover:text-amber-400 transition-colors"
           onClick={(e) => e.stopPropagation()}
         >
           <ArrowUpRight size={24} />
         </a>
       </div>
 
-      <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-blue-400 transition-colors relative z-10">
+      <h3 className="text-xl font-bold text-neutral-100 mb-3 group-hover:text-amber-300 transition-colors relative z-10">
         {title}
       </h3>
 
-      <p className="text-slate-400 text-sm mb-6 flex-grow leading-relaxed relative z-10">
+      <p className="text-neutral-400 text-sm mb-6 flex-grow leading-relaxed relative z-10">
         {description}
       </p>
 
       <div className="flex flex-wrap gap-2 mt-auto relative z-10">
         {tags.map((tag, tagIndex) => (
-          <span key={tagIndex} className="text-xs font-mono text-blue-400/80">
+          <span key={tagIndex} className="text-xs font-mono text-amber-300/80">
             #{tag}
           </span>
         ))}

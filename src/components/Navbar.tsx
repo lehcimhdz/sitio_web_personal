@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled
-          ? 'bg-slate-900/90 backdrop-blur-md border-slate-800 py-4'
+          ? 'bg-neutral-950/90 backdrop-blur-md border-neutral-900 py-4'
           : 'bg-transparent border-transparent py-6'
         }`}
     >
@@ -38,10 +38,10 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="font-bold text-xl tracking-tight text-slate-100"
+          className="font-bold text-xl tracking-tight text-neutral-100"
         >
           {personalInfo.name}
-          <span className="text-blue-500">.</span>
+          <span className="text-amber-300">.</span>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -53,7 +53,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               onClick={() => scrollToSection(link.id)}
-              className="text-sm font-medium text-slate-400 hover:text-blue-500 transition-colors"
+              className="text-sm font-medium text-neutral-400 hover:text-amber-300 transition-colors"
             >
               {link.name}
             </motion.button>
@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-slate-300 hover:text-white p-2"
+            className="text-neutral-300 hover:text-white p-2"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -78,14 +78,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-900 border-b border-slate-800 overflow-hidden"
+            className="md:hidden bg-neutral-950 border-b border-neutral-900 overflow-hidden"
           >
             <div className="container-custom py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-left text-lg font-medium text-slate-400 hover:text-blue-500 py-2"
+                  className="text-left text-lg font-medium text-neutral-400 hover:text-amber-300 py-2"
                 >
                   {link.name}
                 </button>
