@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
-import DataFlowBackground from '@/components/DataFlowBackground';
 
 // Lazy load below-the-fold components
 const Experience = dynamic(() => import('@/components/Experience'), { ssr: true });
@@ -37,9 +36,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Background - Lightweight CSS Animation */}
-      <DataFlowBackground />
 
       <Navbar />
 

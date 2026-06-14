@@ -21,7 +21,6 @@ const config: Config = {
         'src/components/**/*.tsx',
         'src/hooks/**/*.ts',
         'src/lib/**/*.ts',
-        '!src/components/DataFlowBackground.tsx',
     ],
     coverageThreshold: {
         global: {
