@@ -1,39 +1,35 @@
-
 import { render, screen } from '@testing-library/react'
 import Hero from '@/components/Hero'
 import '@testing-library/jest-dom'
 
-// Mock framer-motion to avoid animation issues in tests
-jest.mock('framer-motion', () => ({
-    motion: {
-        div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-        h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-        p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
-    },
-}))
-
-describe('Hero Component', () => {
-    it('renders the Data Engineer title', () => {
+describe('Hero', () => {
+    it('renders the new headline (no template formula)', () => {
         render(<Hero />)
-
-        // Check for the main heading
         const heading = screen.getByRole('heading', { level: 1 })
-        expect(heading).toHaveTextContent('Data Engineer')
+        expect(heading).toHaveTextContent(/Backend engineer/i)
+        expect(heading).not.toHaveTextContent('Senior Backend Developer.')
+        expect(heading).not.toHaveTextContent('Building production')
     })
 
-    it('renders the navigation buttons', () => {
+    it('renders name and location in the meta line', () => {
         render(<Hero />)
-
-        // Should have "View Work" and "Contact Me" buttons/links
-        expect(screen.getByText('View Work')).toBeInTheDocument()
-        expect(screen.getByText('Contact Me')).toBeInTheDocument()
+        expect(screen.getByText(/Michel Cano/)).toBeInTheDocument()
+        expect(screen.getAllByText(/Mexico City/).length).toBeGreaterThan(0)
     })
 
-    it('renders social links', () => {
+    it('renders contact links', () => {
         render(<Hero />)
+        expect(screen.getByRole('link', { name: 'GitHub' })).toBeInTheDocument()
+        expect(screen.getByRole('link', { name: 'LinkedIn' })).toBeInTheDocument()
+        expect(screen.getByRole('link', { name: /bmichelcano/ })).toHaveAttribute(
+            'href',
+            'mailto:bmichelcano@gmail.com'
+        )
+    })
 
-        // Check if GitHub and LinkedIn links exist
-        expect(screen.getByText('GitHub')).toBeInTheDocument()
-        expect(screen.getByText('LinkedIn')).toBeInTheDocument()
+    it('does not render the stats counter', () => {
+        render(<Hero />)
+        expect(screen.queryByText(/cases\/year/i)).not.toBeInTheDocument()
+        expect(screen.queryByText(/automated tests/i)).not.toBeInTheDocument()
     })
 })

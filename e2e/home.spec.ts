@@ -9,13 +9,14 @@ test.describe('Page load and section visibility', () => {
     await expect(page).toHaveTitle(/Michel Cano/)
   })
 
-  test('hero section is visible on load', async ({ page }) => {
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    await expect(page.getByRole('heading', { level: 1, name: /Data Engineer/ })).toBeVisible()
+  test('hero section is visible on load with the rewritten headline', async ({ page }) => {
+    const heading = page.getByRole('heading', { level: 1 })
+    await expect(heading).toBeVisible()
+    await expect(heading).toContainText(/Backend engineer/i)
   })
 
   test('all main sections exist in the DOM', async ({ page }) => {
-    const sections = ['#experience', '#skills', '#portfolio', '#about', '#contact']
+    const sections = ['#home', '#experience', '#skills', '#portfolio', '#about', '#contact']
     for (const id of sections) {
       await expect(page.locator(id)).toBeAttached()
     }
@@ -23,22 +24,22 @@ test.describe('Page load and section visibility', () => {
 
   test('experience section heading is visible after scrolling', async ({ page }) => {
     await page.locator('#experience').scrollIntoViewIfNeeded()
-    await expect(page.getByRole('heading', { name: /Professional Experience/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /^Work$/i })).toBeVisible()
   })
 
   test('skills section heading is visible after scrolling', async ({ page }) => {
     await page.locator('#skills').scrollIntoViewIfNeeded()
-    await expect(page.getByRole('heading', { name: /Technical Expertise/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /^Stack$/i })).toBeVisible()
   })
 
   test('portfolio section heading is visible after scrolling', async ({ page }) => {
     await page.locator('#portfolio').scrollIntoViewIfNeeded()
-    await expect(page.getByRole('heading', { name: /Featured Projects/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /^Projects$/i })).toBeVisible()
   })
 
   test('contact section heading is visible after scrolling', async ({ page }) => {
     await page.locator('#contact').scrollIntoViewIfNeeded()
-    await expect(page.getByRole('heading', { name: /Ready to build something scalable/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /^Contact$/i })).toBeVisible()
   })
 
   test('footer is present', async ({ page }) => {

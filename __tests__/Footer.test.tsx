@@ -1,6 +1,6 @@
-
 import { render, screen } from '@testing-library/react'
 import Footer from '@/components/Footer'
+import '@testing-library/jest-dom'
 
 describe('Footer', () => {
   it('renders the copyright notice with the current year', () => {
@@ -10,9 +10,9 @@ describe('Footer', () => {
     expect(screen.getByText(/Michel Cano Hernández/)).toBeInTheDocument()
   })
 
-  it('renders the built-with credit', () => {
+  it('does not render the built-with stack disclaimer', () => {
     render(<Footer />)
-    expect(screen.getByText(/Built with Next\.js/)).toBeInTheDocument()
+    expect(screen.queryByText(/Built with Next\.js/)).not.toBeInTheDocument()
   })
 
   it('renders the scroll-to-top button', () => {

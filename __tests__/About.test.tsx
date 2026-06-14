@@ -1,25 +1,26 @@
-
 import { render, screen } from '@testing-library/react'
 import About from '@/components/About'
 import { education, certifications } from '@/data/content'
+import '@testing-library/jest-dom'
 
 describe('About', () => {
   it('renders the section heading', () => {
     render(<About />)
-    expect(screen.getByRole('heading', { name: /About Me/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /^About$/i })).toBeInTheDocument()
   })
 
   it('renders the bio text', () => {
     render(<About />)
-    expect(screen.getByText(/production systems/i)).toBeInTheDocument()
+    expect(screen.getByText(/production backend systems/i)).toBeInTheDocument()
   })
 
   it('renders all education entries', () => {
     render(<About />)
     education.forEach(edu => {
-      expect(screen.getByText(edu.school)).toBeInTheDocument()
       expect(screen.getByText(edu.degree)).toBeInTheDocument()
     })
+    expect(screen.getByText(/UnADM/)).toBeInTheDocument()
+    expect(screen.getByText(/UNAM/)).toBeInTheDocument()
   })
 
   it('renders all certifications', () => {

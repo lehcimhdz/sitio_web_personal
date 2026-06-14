@@ -1,12 +1,12 @@
-
 import { render, screen } from '@testing-library/react'
 import Skills from '@/components/Skills'
 import { skills } from '@/data/content'
+import '@testing-library/jest-dom'
 
 describe('Skills', () => {
   it('renders the section heading', () => {
     render(<Skills />)
-    expect(screen.getByRole('heading', { name: /Technical Expertise/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /^Stack$/i })).toBeInTheDocument()
   })
 
   it('renders all skill categories', () => {
@@ -16,12 +16,10 @@ describe('Skills', () => {
     })
   })
 
-  it('renders skill items for each category', () => {
+  it('renders skill items as a comma-separated string per category', () => {
     render(<Skills />)
     skills.forEach(group => {
-      group.items.forEach(item => {
-        expect(screen.getByText(item)).toBeInTheDocument()
-      })
+      expect(screen.getByText(group.items.join(', '))).toBeInTheDocument()
     })
   })
 })
