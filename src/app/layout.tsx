@@ -1,4 +1,3 @@
-
 import React from "react";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
@@ -16,21 +15,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Michel Cano - Python Developer & Data Engineer",
-  description: "Python Developer and Data Engineer with 5 years of experience building production systems for government institutions. Specializes in Django, FastAPI, Airflow, PySpark, AWS, Terraform, and open-source tooling.",
-  keywords: "Python Developer, Data Engineer, Django, FastAPI, Apache Airflow, PySpark, dbt, AWS, Terraform, Michel Cano, legismex, open-data-mexico",
+  metadataBase: new URL("https://michel-cano.netlify.app"),
+  title: "Michel Cano — Backend engineer",
+  description: "Backend engineer in Mexico City. Python, Django, Postgres, Celery — currently writing healthcare backends at XalDigital and keeping a public-sector victim registry online.",
+  keywords: "Michel Cano, Backend engineer, Python, Django, Celery, PostgreSQL, FastAPI, Airflow, Mexico City",
   authors: [{ name: "Michel Cano" }],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
-    title: "Michel Cano - Python Developer & Data Engineer",
-    description: "Building production systems that eliminate manual work and scale with real-world complexity.",
+    title: "Michel Cano — Backend engineer",
+    description: "Python systems for organizations where the cost of getting it wrong is measured in someone's afternoon, not in revenue.",
     type: "website",
     locale: "en_US",
     images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michel Cano - Python Developer & Data Engineer",
-    description: "Building production systems that eliminate manual work and scale with real-world complexity.",
+    title: "Michel Cano — Backend engineer",
+    description: "Python systems for organizations where the cost of getting it wrong is measured in someone's afternoon, not in revenue.",
     images: ["/og-image.png"],
   },
 };
